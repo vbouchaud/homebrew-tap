@@ -15,9 +15,9 @@ class K8sLdapAuth < Formula
     ENV["COMMITHASH"] = "ef268b9a39df600b7ce0ed2652fff71fd3063ef3"
     ENV["PKG"] = "vbouchaud/k8s-ldap-auth"
     ENV["APPNAME"] = "k8s-ldap-auth"
-    ENV["BUILDTIME"] = "#{DateTime.now}"
-    ENV["GOVERSION"] =
-      system "go", "version", "|", "sed", "-e", "s/go version go\([0-9]\{1,3\}\.[0-9]\{1,3\}\).*/\1/g"
+    ENV["BUILDTIME"] = DateTime.now.to_s
+    ENV["GOVERSION"] = "unsupported"
+      # system("go", "version", "|", "sed", "-e", "s/go version go\([0-9]\{1,3\}\.[0-9]\{1,3\}\).*/\1/g").to_s
 
     ENV["CGO_ENABLED"] = "0"
 
