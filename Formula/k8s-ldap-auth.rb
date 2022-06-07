@@ -28,10 +28,12 @@ class K8sLdapAuth < Formula
                         -X ${PKG}/version.BUILDTIME=${BUILDTIME} \
                         -X ${PKG}/version.COMMITHASH=${COMMITHASH}"
 
-    cp "k8s-ldap-auth", bin.to_s
+
+    libexec.install "k8s-ldap-auth"
+    bin.install_symlink libexec/"k8s-ldap-auth"
   end
 
   test do
-    system "k8s-ldap-auth"
+    system bin/"k8s-ldap-auth"
   end
 end
